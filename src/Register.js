@@ -12,6 +12,8 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [surfState, setSurfStyle] = useState("");
+  const [location, setLocation] = useState("");
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
 
@@ -49,6 +51,21 @@ function Register() {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
+        <input
+          type="text"
+          className="register__textBox"
+          value={null}
+          onChange={(e) => setSurfStyle(e.target.value)}
+          placeholder="Surf Style"
+        />
+        <input
+          type="text"
+          className="register__textBox"
+          value={null}
+          onChange={(e) => setLocation(e.target.value)}
+          placeholder="Location"
+        />
+        
         <button className="register__btn" onClick={register}>
           Register
         </button>
